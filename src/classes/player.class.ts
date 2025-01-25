@@ -1,5 +1,8 @@
 export class Player {
+  private name: string;
+  private healthPoints: number;
   private size: number;
+  private color: string;
 
   private position: {
     x: number;
@@ -17,12 +20,15 @@ export class Player {
     y: 0,
   };
 
-  private weaponRange: number = 200;
+  private weaponRange: number = 500;
 
-  constructor(x: number, y: number, size: number) {
+  constructor(name: string, x: number, y: number, size: number, color: string, hp: number = 100) {
+    this.name = name;
     this.position.x = x;
     this.position.y = y;
     this.size = size;
+    this.color = color;
+    this.healthPoints = hp;
   }
 
   public getPosition() {
@@ -46,6 +52,26 @@ export class Player {
 
   public getWeaponRange() {
     return this.weaponRange;
+  }
+
+  public getColor() {
+    return this.color;
+  }
+
+  public shoot() {
+    console.log("BAM");
+  }
+
+  public getName() {
+    return this.name;
+  }
+
+  public getHealthPoints() {
+    return this.healthPoints;
+  }
+
+  public gainDamage(damage: number) {
+    this.healthPoints -= damage;
   }
 
   public move(key: string) {
