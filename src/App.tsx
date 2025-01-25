@@ -1,9 +1,11 @@
-import "./App.css";
+import Board from "./components/board";
 
 function App() {
-  console.log("hello");
-
-  return <div className="bg-black">HELLO</div>;
+  return (
+    <div className="h-dvh w-screen bg-black p-5">
+      <Board />
+    </div>
+  );
 }
 
 export default App;
